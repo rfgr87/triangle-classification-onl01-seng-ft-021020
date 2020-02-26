@@ -7,7 +7,7 @@ class Triangle
   end
   
   def kind
-    if (@x + @y) > @z && (@x + @z) > @y && (@y +@z) > @x && (@x > 0 || @y > 0 || @z > 0)
+    if (@x + @y) > @z && (@x + @z) > @y && (@y +@z) > @x && (@x > 0 && @y > 0 && @z > 0)
       if @x == @y && @x == @z
         :equilateral 
       elsif @x == @y || @y == @z || @z == @x 
