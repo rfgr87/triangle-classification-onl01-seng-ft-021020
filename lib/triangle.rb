@@ -22,6 +22,10 @@ class Triangle
     end
   end
   
+  def validate
+    raise TriangleError
+    
+    
   class TriangleError < StandardError
     def message
       "not valid"
