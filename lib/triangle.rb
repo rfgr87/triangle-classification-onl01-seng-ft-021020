@@ -9,7 +9,7 @@ class Triangle
   def kind
     if @x <= 0 || @y <= 0 || @z <= 0 || @x + @y < @z || @x + @z < @y || @y +@z < @x
       begin
-        raise TriangleError
+        validate
       rescue TriangleError => error
           puts error.message
       end
@@ -24,6 +24,7 @@ class Triangle
   
   def validate
     raise TriangleError
+  end
     
     
   class TriangleError < StandardError
