@@ -28,6 +28,8 @@ class Triangle
   
   class TriangleError < StandardError
     def message
+      "not valid"
+    end
   end 
 
 end
