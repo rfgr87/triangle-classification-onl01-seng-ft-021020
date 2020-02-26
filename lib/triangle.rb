@@ -10,7 +10,10 @@ class Triangle
     if (@x + @y) > @z && (@x + @z) > @y && (@y +@z) > @x 
       if @x == @y && @x == @z 
         :equilateral 
-      
+      elsif @x == @y || @y == @z || @z == @x 
+        :isosceles 
+      else 
+        
     
   end 
   
