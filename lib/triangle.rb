@@ -7,6 +7,10 @@ class Triangle
   end
   
   def kind
+    if @x <= 0 || @y <= 0 || @z <= 0 || @x + @y > @z || @x + @z > @y || @y +@z > @x
+    
+    
+    
     if @x == @y && @x == @z
       :equilateral 
     elsif @x == @y || @y == @z || @z == @x 
@@ -19,7 +23,7 @@ class Triangle
   end
 
   def validate_triangle
-    if @x <= 0 || @y <= 0 || @z <= 0 || @x + @y > @z || @x + @z > @y || @y +@z > @x
+    begin
       raise TriangleError
       rescue TriangleError => error
         puts error.message
