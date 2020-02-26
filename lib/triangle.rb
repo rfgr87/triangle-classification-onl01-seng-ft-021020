@@ -1,3 +1,33 @@
 class Triangle
-  # write code here
+  
+  def initialize(x, y, z)
+    @x = x 
+    @y = y 
+    @z = z 
+  end
+  
+  def kind
+    if @x <= 0 || @y <= 0 || @z <= 0 || @x + @y <= @z || @x + @z <= @y || @y +@z <= @x
+      raise TriangleError
+      
+      # begin
+      #   raise TriangleError
+      # rescue TriangleError => error
+      #     puts error.message
+      # end
+    elsif @x == @y && @x == @z
+      :equilateral 
+    elsif @x == @y || @y == @z || @z == @x 
+      :isosceles 
+    else 
+      :scalene 
+    end
+  end
+    
+  class TriangleError < StandardError
+    def message
+      "not valid"
+    end
+  end 
+
 end
