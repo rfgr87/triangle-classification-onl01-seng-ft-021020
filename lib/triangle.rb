@@ -8,11 +8,13 @@ class Triangle
   
   def kind
     if @x <= 0 || @y <= 0 || @z <= 0 || @x + @y < @z || @x + @z < @y || @y +@z < @x
-      begin
-        validate
-      rescue TriangleError => error
-          puts error.message
-      end
+      raise TriangleError
+      
+      # begin
+      #   raise TriangleError
+      # rescue TriangleError => error
+      #     puts error.message
+      # end
     elsif @x == @y && @x == @z
       :equilateral 
     elsif @x == @y || @y == @z || @z == @x 
@@ -21,11 +23,6 @@ class Triangle
       :scalene 
     end
   end
-  
-  def validate
-    raise TriangleError
-  end
-    
     
   class TriangleError < StandardError
     def message
